@@ -1,2 +1,14 @@
-# alx-frontend-for-fun
-Markdown is awesome! All your README.md are made in Markdown, but do you know how GitHub are rendering them?  It’s time to code a Markdown to HTML!
+# My title
+- He**l**lo
+- Bye
+
+Hello
+
+I'm **a** text
+with __2 lines__
+
+((I will live in Caracas))
+
+But it's [[private]]
+
+So cool!
