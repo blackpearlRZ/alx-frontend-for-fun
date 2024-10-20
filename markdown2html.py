@@ -75,7 +75,7 @@ def convert(markdownFile, htmlFile):
                         i = j
                     i += 1
     except Exception as e:
-        print("Missing {}".format(markdown), file=sys.stderr)
+        print("Missing {}".format(markdownFile), file=sys.stderr)
         sys.exit(1)
     sys.exit(0)
 
@@ -85,4 +85,4 @@ if __name__ == "__main__":
         print("Usage: ./markdown2html.py README.md README.html",
               file=sys.stderr)
         sys.exit(1)
-        convert(sys.argv[1], sys.argv[2])
+    convert(sys.argv[1], sys.argv[2])
