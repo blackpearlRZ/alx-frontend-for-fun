@@ -74,10 +74,10 @@ def convert(markdownFile, htmlFile):
                         w.write("<p>\n{}\n</p>\n".format(listStr))
                         i = j
                     i += 1
-        except Exception as e:
-            print("Missing {}".format(markdown), file=sys.stderr)
-            sys.exit(1)
-        sys.exit(0)
+    except Exception as e:
+        print("Missing {}".format(markdown), file=sys.stderr)
+        sys.exit(1)
+    sys.exit(0)
 
 
 if __name__ == "__main__":
