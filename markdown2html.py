@@ -9,8 +9,8 @@ def convert(markdownFile, htmlFile):
     """
     try:
         with open(markdownFile, 'r') as r:
-            with open(htmlFile, 'w') as w:
-                text = r.read()
+            text = r.read()
+            with open(htmlFile, 'w') as w:()
                 w.write(text)
     except Exception as e:
         print("Missing {}".format(markdownFile), file=sys.stderr
