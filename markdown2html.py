@@ -35,7 +35,7 @@ def convert(markdownFile, htmlFile):
                         i += 1
                         continue
 
-                      # Headers
+                    # Headers
                     if line.startswith('###### '):
                         w.write('<h6>{}</h6>\n'.format(line[7:]))
                     elif line.startswith('##### '):
@@ -73,7 +73,7 @@ def convert(markdownFile, htmlFile):
                         w.write("<ol>\n{}</ol>\n".format(listStr))
                         i = j
 
-                      # Paragraphs
+                    # Paragraphs
                     else:
                         listStr = ""
                         for j in range(i, len(textLines)):
