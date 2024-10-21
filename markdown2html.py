@@ -29,17 +29,17 @@ def convert(markdownFile, htmlFile):
             with open(htmlFile, 'w') as w:
                 text = r.read()
 
-                # Basic Markdown to HTML replacements
+                #Basic Markdown to HTML replacements
                 text = re.sub(
                         r'\*\*(.*?)\*\*', r'<b>\1</b>', text
                         )
                 text = re.sub(r'__(.*?)__', r'<em>\1</em>', text)
 
-                #  [[string]] to md5 hash
+                #[[string]] to md5 hash
                 text = re.sub(r'\[\[(.*?)\]\]', lambda m: f'{hashlib.md5
                               (m.group(1).encode()).hexdigest()}', text)
 
-                #  ((string)) to remove all occurrences of the character 'c'
+                #((string)) to remove all occurrences of the character 'c'
                 text = re.sub(r'\(\((.*?)\)\)', lambda m: f'{re.sub("c",
                               "", m.group(1), flags=re.IGNORECASE)}', text)
                 textLines = text.splitlines()
@@ -50,7 +50,7 @@ def convert(markdownFile, htmlFile):
                         i += 1
                         continue
 
-                    # Headers
+                    #Headers
                     if line.startswith('###### '):
                         w.write('<h6>{}</h6>\n'.format(line[7:]))
                     elif line.startswith('##### '):
@@ -64,7 +64,7 @@ def convert(markdownFile, htmlFile):
                     elif line.startswith('# '):
                         w.write('<h1>{}</h1>\n'.format(line[2:]))
 
-                    # Unordered list (- )
+                    #Unordered list (- )
                     elif line.startswith('- '):
                         listStr = ""
                         for j in range(i, len(textLines)):
@@ -76,7 +76,7 @@ def convert(markdownFile, htmlFile):
                         w.write("<ul>\n{}</ul>\n".format(listStr))
                         i = j
 
-                    # Ordered list (* )
+                    #Ordered list (* )
                     elif line.startswith('* '):
                         listStr = ""
                         for j in range(i, len(textLines)):
@@ -88,7 +88,7 @@ def convert(markdownFile, htmlFile):
                         w.write("<ol>\n{}</ol>\n".format(listStr))
                         i = j
 
-                    # Paragraphs
+                    #Paragraphs
                     else:
                         listStr = ""
                         for j in range(i, len(textLines)):
