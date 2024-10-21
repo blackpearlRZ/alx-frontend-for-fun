@@ -1,12 +1,29 @@
 #!/usr/bin/python3
-""" This script converts markdown to HTML"""
+""" This script converts markdown to HTML.
+
+It handles:
+    - Header conversion (`#`, `##`, ..., `######` to `<h1>`, `<h2>`, ..., `<h6>`)
+    - Unordered and ordered lists (`-` to `<ul>`, `*` to `<ol>`)
+    - Bold and italic text (`**text**` to `<b>text</b>`, `__text__` to `<em>text</em>`)
+    - MD5 hashing for content wrapped in `[[text]]`
+    - Removal of the letter 'c' from text wrapped in `((text))`
+    - Paragraph conversion with `<br>` for line breaks
+"""
 import sys
 import re
 import hashlib
 
 
 def convert(markdownFile, htmlFile):
-    """ Converts markdown to HTML"""
+    """  Converts the contents of a Markdown file to HTML and writes it to an output file.
+
+        Parameters:
+            markdownFile (str): The input Markdown file name.
+            htmlFile (str): The output HTML file name.
+
+        Raises:
+            Exception: If the input Markdown file does not exist or is inaccessible.
+    """
     try:
         with open(markdownFile, 'r') as r:
             with open(htmlFile, 'w') as w:
