@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-""" This script converts markdown to HTML.
-"""
+""" This script converts markdown to HTML"""
 import sys
 import re
 import hashlib
 
 
 def convert(markdownFile, htmlFile):
-    """ Converts markdown to HTML.
-    """
+    """ Converts markdown to HTML"""
     try:
         with open(markdownFile, 'r') as r:
             with open(htmlFile, 'w') as w:
