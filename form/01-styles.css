@@ -646,7 +646,7 @@
     content: "";
   }
 
-  /*** FORM ***/
+/*** FORM ***/
 /* Comment section
     ============================= */
 
@@ -656,7 +656,7 @@
   padding-left:  7rem;
 }
 
-.section-comments .section-title{
+.post-comments .section-title{
   font-variant: small-caps;
 }
 
