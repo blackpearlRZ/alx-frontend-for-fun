@@ -674,6 +674,6 @@ fieldset{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  border: none;
+  border: 0;
   padding: 0 0 2rem;
 }
