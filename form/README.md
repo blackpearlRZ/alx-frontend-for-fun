@@ -1,6 +1,5 @@
 # Learning objectives
 
-
 - How to create an HTML5 form
 - How to choose the right input type
 - How to constrain a form field with regular expressions
