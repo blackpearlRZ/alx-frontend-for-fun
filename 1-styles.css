@@ -1,0 +1,27 @@
+a {
+    text-decoration: none;
+    color: #e1003c;
+    position: relative;
+}
+a:visited {
+    color: #e1003c;
+    text-decoration: none;
+}
+
+a::before {
+    content: '';
+    background-color: #e1003c;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: top left;
+    transition: transform 0.3s ease;
+}
+
+a:hover::before {
+    transform: scaleX(1);
+}
