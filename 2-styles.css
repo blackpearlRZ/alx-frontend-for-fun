@@ -1,0 +1,53 @@
+.toggle {
+    padding: 50px;
+}
+.toggle-label { 
+    position : relative ;
+    display : inline-block;
+    width : 120px;
+    height : 40px;
+    background-color: #e1003c;
+    border: 2px solid rgb(189, 189, 189);
+    border-radius: 60px;
+}
+.toggle-label::after { 
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid rgb(189, 189, 189);
+    top: -5px;
+    left: 80px;
+    transition: 0.3s;
+}
+.toggle-cb:checked + .toggle-label::after {
+    left : -5px;
+}
+.toggle-cb:checked + .toggle-label {
+    background-color: rgb(236, 236, 236);
+}
+.toggle-cb {
+    display: none;
+}
+.toggle-cb:checked + .toggle-label::before {
+    content: 'NO';
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: rgb(180, 180, 180);
+    font-weight: 600;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+.toggle-cb + .toggle-label::before {
+    content: 'YES';
+    position: absolute;
+    top: 10px;
+    right: 60px;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 20px;
+    font-family: sans-serif;
+}
