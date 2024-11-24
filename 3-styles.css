@@ -1,0 +1,118 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+.menu-open {
+    display: none;
+}
+
+/* hamburger lines */
+.menu-line::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 5px;
+    transition: 0.5s ease;
+}
+
+
+
+/* hamburger menu */
+.menu-open-button {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #e1003c;
+    border-radius: 50%;
+    margin: 10px;
+    transition: 0.5s ease;
+}
+
+/* hamburger menu items */
+.menu-item {
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #e1003c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    font-size: 20px;
+    border: 2px solid #e1003c;
+}
+.menu-item:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #e1003c;
+}
+
+.menu-item .fa {
+    color: white;
+}
+.menu-item:hover .fa {
+    color: #e1003c;
+}
+
+
+.menu-open:checked ~ .menu-item {
+    display: none;
+}
+/* hamburger menu */
+.menu-open:checked ~ .menu-open-button {
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+}
+
+/* hamburger lines */
+.menu-line-1::after {
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    transform: rotate(45deg);
+}
+.menu-line-2::after {
+    opacity: 0;
+}
+.menu-line-3::after {
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    transform: rotate(-45deg);
+}
+
+
+.menu-open:checked ~ .menu-open-button .menu-line-1::after {
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    transform: rotate(0deg);
+}
+.menu-open:checked ~ .menu-open-button .menu-line-2::after {
+    position: absolute;
+    top: 27px;
+    left: 20px;
+    opacity: 1;
+}
+.menu-open:checked ~ .menu-open-button .menu-line-3::after {
+    position: absolute;
+    top: 37px;
+    left: 20px;
+    transform: rotate(0deg);
+}
